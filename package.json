@@ -1,0 +1,41 @@
+{
+  "name": "canvas-captcha"
+  ,"version": "0.0.1"
+  ,"description": "a nodejs captcha module based on node-canvas"
+  ,"main": "index.js"
+  ,"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  ,"repository": {
+    "type": "git",
+    "url": "https://github.com/zxdong262/canvas-captcha.git"
+  }
+  ,"keywords": [
+    "captcha",
+    "canvas",
+    "cairo"
+  ]
+  ,"author": {
+    "name": "ZHAO Xudong"
+    ,"email": "zxdong@gmail.com"
+    ,"url": "http://html5beta.com"
+  }
+  ,"scripts": {
+    "start": "node app.js"
+  }
+  ,"dependencies": {
+    "canvas": "*"
+  }
+  ,"devDependencies": {
+    "express": "4.x"
+    ,"jade": "*"
+    ,"body-parser": "*"
+    ,"express-session": "*"
+    ,"cookie-parser": "*"
+  }
+  ,"license": "MIT"
+  ,"bugs": {
+    "url": "https://github.com/zxdong262/canvas-captcha/issues"
+  }
+  ,"homepage": "https://github.com/zxdong262/canvas-captcha"
+}

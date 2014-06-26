@@ -1,0 +1,41 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		title test captcha
+		style.
+			.ac {
+				text-align: center;
+				padding:40px;
+			}
+	body.ac
+		h1 test captcha
+		image.captcha(src='/captcha', alt='captcha', title='click to refresh', data-url='/captcha')
+		br
+		input(name='captcha', type='text', placeholder='input captcha')
+		br
+		button(type='button') submit
+		script(src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js')
+		script.
+
+			//refresh
+			$('.captcha').click(function() {
+				var t = $(this)
+				,url = t.data('url')
+				t.prop('src', url + '?_=' + (new Date().getTime()))
+			})
+
+			//validate captcha
+			$('button').click(function() {
+				$.ajax({
+					url: '/'
+					,data: {
+						captcha: $('[name="captcha"]').val()
+					}
+					,type: 'post'
+					,success: function(res) {
+						alert(res)
+						$('.captcha').trigger('click')
+					}
+				})
+			})
