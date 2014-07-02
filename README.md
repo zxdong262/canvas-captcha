@@ -16,7 +16,7 @@ $ npm install canvas-captcha
 
 ```javascript
 //captcha 
-var captcha = require('captcha')
+var captcha = require('canvas-captcha')
 ,captchaOptions = {
 	charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array
 	,size: {
