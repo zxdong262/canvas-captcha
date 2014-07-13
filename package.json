@@ -1,6 +1,6 @@
 {
   "name": "canvas-captcha"
-  ,"version": "0.0.6"
+  ,"version": "1.2.1"
   ,"description": "a nodejs captcha module based on node-canvas"
   ,"main": "index.js"
   ,"scripts": {
