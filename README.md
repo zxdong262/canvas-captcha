@@ -55,7 +55,7 @@ app.get('/captcha', function(req, res) {
 ## test && example
 
 ```bash
-$ git clone git@github.com:zxdong262/canvas-captcha.git
+$ git clone https://github.com/zxdong262/canvas-captcha.git
 $ cd canvas-captcha
 $ sudo npm install
 $ node app.js
