@@ -1,6 +1,6 @@
 # canvas-captcha
 
-a cpatcha module for nodejs based on [node-canvas](https://www.npmjs.org/package/canvas)
+a captcha module for nodejs based on [node-canvas](https://www.npmjs.org/package/canvas)
 
 ## note
 
