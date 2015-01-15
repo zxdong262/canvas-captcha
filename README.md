@@ -40,7 +40,7 @@ var captcha = require('captcha')
 
 //use it like this
 app.get('/captcha', function(req, res) {
-	captcha(captchaOptions, function(data, err) {
+	captcha(captchaOptions, function(err, data) {
 		if(err) {
 			res.send(err)
 		}
@@ -55,7 +55,7 @@ app.get('/captcha', function(req, res) {
 ## test && example
 
 ```bash
-$ git clone git@github.com:zxdong262/canvas-captcha.git
+$ git clone https://github.com/zxdong262/canvas-captcha.git
 $ cd canvas-captcha
 $ sudo npm install
 $ node app.js
