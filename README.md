@@ -61,7 +61,11 @@ $ sudo npm install
 $ node app.js
 ```
 
-then visit [http://localhost:5000](http://localhost:5000)
+then visit [http://localhost:5001](http://localhost:5001)
+
+## changelog
+
+1.2.3 use canvas version `1.1.6` version instead of version `*`
 
 ## license
 
