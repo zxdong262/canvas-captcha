@@ -87,10 +87,10 @@ module.exports = function(opts, callback) {
 
 		//to buffer
 		canvas.toBuffer(function(err, buf) {
-			callback({
+			callback(err, {
 				captchaStr: text
 				,captchaImg: buf
-			}, err)
+			})
 		})
 
 		//end

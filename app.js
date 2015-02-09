@@ -49,7 +49,7 @@ app.use(session({
 app.set('view engine', 'jade')
 
 app.get('/captcha', function(req, res) {
-	captcha(captchaOptions, function(data, err) {
+	captcha(captchaOptions, function(err, data) {
 		if(err) {
 			res.send(err)
 		}

@@ -40,7 +40,7 @@ var captcha = require('canvas-captcha')
 
 //use it like this
 app.get('/captcha', function(req, res) {
-	captcha(captchaOptions, function(data, err) {
+	captcha(captchaOptions, function(err, data) {
 		if(err) {
 			res.send(err)
 		}
@@ -65,7 +65,8 @@ then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
 
-1.2.3 use canvas version `1.1.6` version instead of version `*`
+- 1.2.4 make `err` the first callback param
+- 1.2.3 use canvas version `1.1.6` version instead of version `*`
 
 ## license
 
