@@ -38,7 +38,7 @@ var captcha = require('canvas-captcha')
 	,cRotate: -.05 //bg text rotate
 }
 
-//use it like this
+//callback style
 app.get('/captcha', function(req, res) {
 	captcha(captchaOptions, function(err, data) {
 		if(err) {
@@ -50,6 +50,38 @@ app.get('/captcha', function(req, res) {
 		}
 	})
 })
+
+//use promise
+var captchaPromise = function(options) {
+	return new Promise(function(resolve, reject) {
+		captcha(options, function(err, data) {
+			if(err) reject(err)
+			else resolve(data)
+		})
+	})
+}
+
+//in express
+app.get('/captcha', function(req, res) {
+
+	captchaPromise(captchaOptions)
+	.then(function(data) {
+		req.session.captcha = data.captchaStr
+		res.end(data.captchaImg)
+	}, function(err) {
+		res.send(err)
+	})
+
+})
+
+//in koa
+app.get('/captcha', function* (next) {
+
+	this.body = yield captchaPromise(captchaOptions)
+
+})
+
+
 ```
 
 ## test && example
@@ -65,6 +97,7 @@ then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
 
+- 1.2.5 add some example to readme, use canvas version `1.2.1`
 - 1.2.4 make `err` the first callback param
 - 1.2.3 use canvas version `1.1.6` version instead of version `*`
 
