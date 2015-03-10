@@ -77,7 +77,9 @@ app.get('/captcha', function(req, res) {
 //in koa
 app.get('/captcha', function* (next) {
 
-	this.body = yield captchaPromise(captchaOptions)
+	var data = yield captchaPromise(captchaOptions)
+	this.session.captcha = data.captchaStr
+	this.body = data.captchaImg
 
 })
 
@@ -96,7 +98,7 @@ $ node app.js
 then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
-
+- 1.2.6 just fix readme koa example
 - 1.2.5 add some example to readme, use canvas version `1.2.1`
 - 1.2.4 make `err` the first callback param
 - 1.2.3 use canvas version `1.1.6` version instead of version `*`
