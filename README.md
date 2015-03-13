@@ -4,7 +4,8 @@ a captcha module for nodejs based on [node-canvas](https://www.npmjs.org/package
 
 ## note
 
-install Cairo first, For system-specific installation view the  <a href="https://github.com/LearnBoost/node-canvas/wiki/_pages">Wiki</a> from [node-canvas](https://www.npmjs.org/package/canvas)
+- install Cairo first, For system-specific installation view the  <a href="https://github.com/LearnBoost/node-canvas/wiki/_pages">Wiki</a> from [node-canvas](https://www.npmjs.org/package/canvas)
+- if you can see the captcha image, but empty, try another font your server has or install proper font pack in your server, such as `sudo apt-get install ttf-mscorefonts-installer`.
 
 ## Installation
 
