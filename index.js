@@ -13,7 +13,7 @@ var Canvas = require('canvas')
 	}
 	,rotate: .01
 	,charLength: 4
-	,font: '26px system'
+	,font: '26px Unifont'
 	,strokeStyle: '#0088cc'
 	,bgColor: '#eeeeee'
 	,confusion: true
