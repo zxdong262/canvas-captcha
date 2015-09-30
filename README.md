@@ -99,6 +99,7 @@ $ node app.js
 then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
+- 2.0.0 use canvas 1.2.9, compatible with nodejs v4
 - 1.2.8 use 'Unifont' as default font
 - 1.2.7 use 'system' as default font
 - 1.2.6 just fix readme koa example
