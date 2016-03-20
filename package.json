@@ -1,6 +1,6 @@
 {
   "name": "canvas-captcha"
-  ,"version": "2.0.0"
+  ,"version": "2.0.1"
   ,"description": "a nodejs captcha module based on node-canvas"
   ,"main": "index.js"
   ,"scripts": {
@@ -24,18 +24,21 @@
     "start": "node app.js"
   }
   ,"dependencies": {
-    "canvas": "^1.2.9"
+    "canvas": "1.3.12"
   }
   ,"devDependencies": {
-    "express": "4.x"
-    ,"jade": "*"
-    ,"body-parser": "*"
-    ,"express-session": "*"
-    ,"cookie-parser": "*"
+    "express": "4.13.4"
+    ,"jade": "1.11.0"
+    ,"body-parser": "1.15.0"
+    ,"express-session": "1.13.0"
+    ,"cookie-parser": "1.4.1"
   }
   ,"license": "MIT"
   ,"bugs": {
     "url": "https://github.com/zxdong262/canvas-captcha/issues"
   }
   ,"homepage": "https://github.com/zxdong262/canvas-captcha"
+  ,"engines": {
+    "node": ">= 4"
+  }
 }

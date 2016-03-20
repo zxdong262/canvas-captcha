@@ -30,7 +30,7 @@ var captcha = require('canvas-captcha')
 	} //text drawing start position
 	,rotate: .01 //text ratate
 	,charLength: 4 //how many chars
-	,font: '26px Arial' //font size
+	,font: '26px Unifont' //font size
 	,strokeStyle: '#0088cc' //style
 	,bgColor: '#eeeeee' //bg color
 	,confusion: true //draw another group background text to mangle the text
@@ -99,6 +99,7 @@ $ node app.js
 then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
+- 2.0.1 use canvas 1.3.1, a little rewrite
 - 2.0.0 use canvas 1.2.9, compatible with nodejs v4
 - 1.2.8 use 'Unifont' as default font
 - 1.2.7 use 'system' as default font
