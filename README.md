@@ -1,5 +1,7 @@
 # canvas-captcha
 
+[![Build Status](https://travis-ci.org/zxdong262/canvas-captcha.svg?branch=master)](https://travis-ci.org/zxdong262/canvas-captcha)
+
 a captcha module for nodejs based on [node-canvas](https://www.npmjs.org/package/canvas)
 
 ## note
@@ -10,7 +12,7 @@ a captcha module for nodejs based on [node-canvas](https://www.npmjs.org/package
 ## Installation
 
 ```bash
-$ npm install canvas-captcha
+npm install canvas-captcha
 ```
 
 ## use
@@ -90,13 +92,18 @@ app.get('/captcha', function* (next) {
 ## test && example
 
 ```bash
-$ git clone https://github.com/zxdong262/canvas-captcha.git
-$ cd canvas-captcha
-$ sudo npm install
-$ node app.js
+git clone https://github.com/zxdong262/canvas-captcha.git
+cd canvas-captcha
+sudo npm install
+
+# test
+npm run test
+
+#example
+node test/app.js
+# then visit http://127.0.0.1:5001
 ```
 
-then visit [http://localhost:5001](http://localhost:5001)
 
 ## changelog
 - 2.0.1 use canvas 1.3.1, a little rewrite

@@ -1,44 +1,43 @@
 {
-  "name": "canvas-captcha"
-  ,"version": "2.0.1"
-  ,"description": "a nodejs captcha module based on node-canvas"
-  ,"main": "index.js"
-  ,"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
-  ,"repository": {
+  "name": "canvas-captcha",
+  "version": "2.0.1",
+  "description": "a nodejs captcha module based on node-canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
     "type": "git",
     "url": "https://github.com/zxdong262/canvas-captcha.git"
-  }
-  ,"keywords": [
+  },
+  "keywords": [
     "captcha",
     "canvas",
     "cairo"
-  ]
-  ,"author": {
-    "name": "ZHAO Xudong"
-    ,"email": "zxdong@gmail.com"
-    ,"url": "http://html5beta.com"
-  }
-  ,"scripts": {
-    "start": "node app.js"
-  }
-  ,"dependencies": {
+  ],
+  "author": {
+    "name": "ZHAO Xudong",
+    "email": "zxdong@gmail.com",
+    "url": "http://html5beta.com"
+  },
+  "dependencies": {
     "canvas": "1.3.12"
-  }
-  ,"devDependencies": {
-    "express": "4.13.4"
-    ,"jade": "1.11.0"
-    ,"body-parser": "1.15.0"
-    ,"express-session": "1.13.0"
-    ,"cookie-parser": "1.4.1"
-  }
-  ,"license": "MIT"
-  ,"bugs": {
+  },
+  "devDependencies": {
+    "body-parser": "1.15.0",
+    "co": "^4.6.0",
+    "cookie-parser": "1.4.1",
+    "express": "4.13.4",
+    "express-session": "1.13.0",
+    "jade": "1.11.0",
+    "mocha": "^2.4.5"
+  },
+  "license": "MIT",
+  "bugs": {
     "url": "https://github.com/zxdong262/canvas-captcha/issues"
-  }
-  ,"homepage": "https://github.com/zxdong262/canvas-captcha"
-  ,"engines": {
+  },
+  "homepage": "https://github.com/zxdong262/canvas-captcha",
+  "engines": {
     "node": ">= 4"
   }
 }

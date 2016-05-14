@@ -20,7 +20,7 @@ express = require('express')
 
 
 //captcha 
-,captcha = require('./index')
+,captcha = require('../index')
 ,captchaOptions = {
 
 }
@@ -61,7 +61,7 @@ app.get('/captcha', function(req, res) {
 })
 
 app.get('/', function(req, res) {
-	res.render('index')
+	res.render(__dirname + '/views/index')
 })
 
 app.post('/', function(req, res) {
