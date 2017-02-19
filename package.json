@@ -1,6 +1,6 @@
 {
   "name": "canvas-captcha",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "a nodejs captcha module based on node-canvas",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,6 @@
   },
   "homepage": "https://github.com/zxdong262/canvas-captcha",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   }
 }

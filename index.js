@@ -1,10 +1,9 @@
-'use strict'
 
-let
-Canvas = require('canvas')
-,Image = Canvas.Image
-,defaults = {
-	charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('')
+const Canvas = require('canvas')
+const Image = Canvas.Image
+const strPool = 'abcdefghijklmnopqrstuvwxyz'
+const defaults = {
+	charPool: ( strPool + strPool.toUpperCase() + '1234567890').split('')
 	,size: {
 		width: 100
 		,height: 32
@@ -34,31 +33,16 @@ function getRandomText(pool, len) {
 	return res
 }
 
-module.exports = function(_opts, callback) {
+module.exports = exports.default = function(opts = {}, callback) {
 	
-	let opts = _opts || {}
-	let defs = {
-		charPool: opts.charPool || defaults.charPool
-		,size: opts.size || defaults.size
-		,textPos: opts.textPos || defaults.textPos
-		,rotate: opts.rotate || defaults.rotate
-		,charLength: opts.charLength || defaults.charLength
-		,font: opts.font || defaults.font
-		,strokeStyle: opts.strokeStyle || defaults.strokeStyle
-		,bgColor: opts.bgColor || defaults.bgColor
-		,confusion: opts.confusion || defaults.confusion
-		,cFont: opts.cFont || defaults.cFont
-		,cStrokeStyle: opts.cStrokeStyle || defaults.cStrokeStyle
-		,cRotate: opts.cRotate || defaults.cRotate
-	}
+	let defs = Object.assign(defaults, opts)
 
-	let 
-	canvas = new Canvas(defs.size.width, defs.size.height)
-	,ctx = canvas.getContext('2d')
-	,len = defs.charLength
-	,pool = defs.charPool
-	,ctext = getRandomText(pool, len)
-	,text = getRandomText(pool, len)
+	let canvas = new Canvas(defs.size.width, defs.size.height)
+	let ctx = canvas.getContext('2d')
+	let len = defs.charLength
+	let pool = defs.charPool
+	let ctext = getRandomText(pool, len)
+	let text = getRandomText(pool, len)
 
 	//begin
 
