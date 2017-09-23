@@ -19,70 +19,79 @@ npm install canvas-captcha
 
 ```javascript
 //captcha 
-var captcha = require('canvas-captcha')
-,captchaOptions = {
-	charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array
-	,size: {
-		width: 100
-		,height: 32
-	} //image size
-	,textPos: {
-		left: 15
-		,top: 26
-	} //text drawing start position
-	,rotate: .01 //text ratate
-	,charLength: 4 //how many chars
-	,font: '26px Unifont' //font size
-	,strokeStyle: '#0088cc' //style
-	,bgColor: '#eeeeee' //bg color
-	,confusion: true //draw another group background text to mangle the text
-	,cFont: '30px Arial' //bg text style
-	,cStrokeStyle: '#adc' //bg text color
-	,cRotate: -.05 //bg text rotate
+let captcha = require('canvas-captcha')
+let captchaOptions = {
+  charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array
+  ,size: {
+    width: 100
+    ,height: 32
+  } //image size
+  ,textPos: {
+    left: 15
+    ,top: 26
+  } //text drawing start position
+  ,rotate: .01 //text ratate
+  ,charLength: 4 //how many chars
+  ,font: '26px Unifont' //font size
+  ,strokeStyle: '#0088cc' //style
+  ,bgColor: '#eeeeee' //bg color
+  ,confusion: true //draw another group background text to mangle the text
+  ,cFont: '30px Arial' //bg text style
+  ,cStrokeStyle: '#adc' //bg text color
+  ,cRotate: -.05 //bg text rotate
 }
 
 //callback style
 app.get('/captcha', function(req, res) {
-	captcha(captchaOptions, function(err, data) {
-		if(err) {
-			res.send(err)
-		}
-		else {
-			req.session.captcha = data.captchaStr
-			res.end(data.captchaImg)
-		}
-	})
+  captcha(captchaOptions, function(err, data) {
+    if(err) {
+      res.send(err)
+    }
+    else {
+      req.session.captcha = data.captchaStr
+      res.end(data.captchaImg)
+    }
+  })
 })
 
 //use promise
-var captchaPromise = function(options) {
-	return new Promise(function(resolve, reject) {
-		captcha(options, function(err, data) {
-			if(err) reject(err)
-			else resolve(data)
-		})
-	})
+let captchaPromise = function(options) {
+  return new Promise(function(resolve, reject) {
+    captcha(options, function(err, data) {
+      if(err) reject(err)
+      else resolve(data)
+    })
+  })
 }
 
 //in express
 app.get('/captcha', function(req, res) {
 
-	captchaPromise(captchaOptions)
-	.then(function(data) {
-		req.session.captcha = data.captchaStr
-		res.end(data.captchaImg)
-	}, function(err) {
-		res.send(err)
-	})
+  captchaPromise(captchaOptions)
+  .then(function(data) {
+    req.session.captcha = data.captchaStr
+    res.end(data.captchaImg)
+  }, function(err) {
+    res.send(err)
+  })
 
 })
 
 //in koa
 app.get('/captcha', function* (next) {
 
-	var data = yield captchaPromise(captchaOptions)
-	this.session.captcha = data.captchaStr
-	this.body = data.captchaImg
+  var data = yield captchaPromise(captchaOptions)
+  this.session.captcha = data.captchaStr
+  this.body = data.captchaImg
+
+})
+
+//or
+app.get('/captcha', async ctx => {
+
+  let data = await captchaPromise(captchaOptions)
+  ctx.session.captcha = data.captchaStr
+  ctx.body = data.captchaImg
 
 })
 
@@ -99,7 +108,7 @@ sudo npm install
 # test
 npm run test
 
-#example
+# example
 node test/app.js
 # then visit http://127.0.0.1:5001
 ```
